@@ -1,0 +1,15 @@
+*{margin: 0; padding: 0}
+body{ font-family:Tahoma,Arial,sans-serif; font-size:12px; font-weight: bold; color: #fff; background: rgba(0,0,0,0) url(../img/bg6.jpg) scroll no-repeat 0 0 }
+header{position: relative; width: 240px; height: 26px; margin: 20px auto ; background: rgba(0,0,0,0) url(../img/c_webqq_bg.png) scroll no-repeat -102px 0;}
+#header-logo, #header-logo a, #header-logo img{width: 26px; height: 26px; }
+#header-logo{border: 2px solid #fff; display: inline-block; position: relative; top: -10px; left: 5px;  }
+.header-page{background-color: rgba(0,0,0,0.3); display: inline-block; width: 130px; height: 26px; line-height: 26px; margin-left: 8px;}
+.header-page li{list-style-type: none; display: inline-block; width: 20px; height: 20px; margin: 3px 1px; text-align: center;}
+.header-page li.active{background: rgba(0,0,0,0) url(../img/c_webqq_bg.png) scroll no-repeat -141px -45px;}
+.header-page li a{text-decoration: none; line-height: 20px; display: block;}
+.header-page li a:link{color: #fff;}
+
+.header-btns{position: absolute; left: 172px; width:66px; height:26px; }
+.header-btns a{display: inline-block; width: 19px; height: 19px; }
+.header-btns .a1{background: rgba(0,0,0,0) url(../img/c_webqq_bg.png) scroll no-repeat -163px -38px; margin: 4px 2px 4px 10px;}
+.header-btns .a2{background: rgba(0,0,0,0) url(../img/c_webqq_bg.png) scroll no-repeat -205px -38px; margin: 4px 8px 4px 4px;}

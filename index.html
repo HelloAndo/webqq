@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WebQQ-Ando</title>
+	<link rel="shortcut icon" href="img/favicon.ico" />
+	<link rel="stylesheet" href="css/indexcss.css">
+<script src="js/citymap.js"></script>
+<script src="js/JSLib.js"></script>
+<script src="js/indexjs.js"></script>
+</head>
+<body>
+<!-- 时钟 -->
+<div id="clock" >
+	<div id="">
+		<div id="clockDial">
+
+		</div>
+		<div id="clockHand">
+			<div id="clockHand-hour"></div>
+			<div id="clockHand-min"></div>
+			<div id="clockHand-sec"></div>
+			<div id="clockHand-center"></div>
+		</div>
+	</div>
+</div>
+
+<!-- 天气 -->
+<div id="weather">
+	<div id="weather-close"></div>
+	<div id="weather-today"></div>
+	<div id="weather-tomorrow"></div>
+	<a  id="weather-cityName"></a>
+
+	<div id="weather-menu">
+		<p>输入和选择二选一</p>
+		<input id="inputCity" type="text" value="请输入城市名称" />
+		<select name="" id="weather-menu-province" >
+			<option >请选择省份</option>
+		</select>
+		<select name="" id="weather-menu-city">
+			<option >请选择城市</option>
+		</select>
+		<input type="button" id="weather-menu-cancel" value="取消">
+		<input type="button" id="weather-menu-confirm" value="确定">
+		
+	</div>
+</div>
+
+<div id="rightMenu">
+	<!-- <ul >
+		<li>显示桌面</li>
+		<li>刷新</li>
+		<li class="rightMenu-second">排列方式
+			<ul>
+				<li>横向</li>
+				<li>纵向</li>
+				<li>自由排列</li>
+			</ul>
+		</li>
+		<li>上传文件</li>
+		<li>主题设置</li>
+		<li>系统设置</li>
+		<li class="rightMenu-second">图标设置
+			<ul>
+				<li>小图标</li>
+				<li>大图标</li>
+				<li>超大图标</li>
+			</ul>
+		</li>
+		<li>反馈</li>
+		<li>注销</li>
+	</ul> -->
+	<dl>
+		<dt class="firstDt"></dt>
+			<dd>显示桌面</dd>
+			<dd onclick="reloadPage()">刷新</dd>
+		
+		<dt></dt>
+			<dd class="rightMenu-second" >排列方式
+			<span></span>
+				<ul>
+					<li class="rightMenu-active">纵向</li>
+					<li >横向</li>
+					<li>自由排列</li>
+				</ul>
+			</dd>
+			<dd>上传文件</dd>
+		
+		<dt></dt>
+			<dd>主题设置</dd>
+		
+		<dt></dt>
+			<dd>系统设置</dd>
+			<dd class="rightMenu-second" >图标设置
+			<span></span>
+				<ul>
+					<li>小图标</li>
+					<li class="rightMenu-active">大图标</li>
+					<li>超大图标</li>
+				</ul>
+			</dd>
+		
+		<dt></dt>
+			<dd>反馈</dd>
+			<dd>注销</dd>
+		
+	</dl>
+</div>
+
+<div id="appMini">
+	<div id="appMiniCon">
+		<div class="appMini-title"></div>
+		<div id="appMini-btns">
+			<a class="resume" href="javascript:;"></a>
+			<a class="close" href="javascript:;"></a>
+		</div>
+	</div>
+</div>
+
+	<header>
+		<div id="header-logo" >
+			<a href="javascript:;">
+				<img src="img/avatar.png" alt="">
+			</a>
+		</div>
+		<ul id="header-page">
+			<li class="">
+				<a href="javascript:;">1</a>
+			</li>
+			<li class=""><a href="javascript:;">2</a></li>
+			<li><a href="javascript:;">3</a></li>
+			<li><a href="javascript:;">4</a></li>
+			<li><a href="javascript:;">5</a></li>
+		</ul>
+		<div class="header-btns">
+			<a class="a1" href="javascript:;"></a>
+			<a class="a2" href="javascript:;"></a>
+		</div>
+	</header>
+
+	<div id="mainBox">
+		<ul id="mainBox-page1">
+			<li class="mainBox-item1" title="欢乐斗地主">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_11.png" alt="">
+					</div>
+					<span>
+						<strong>欢乐斗地主<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li class="mainBox-item2" title="3366">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_12.png" alt="">
+					</div>
+					<span>
+						<strong>3366<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li class="mainBox-item3" title="QQ宝贝">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_13.png" />
+					</div>
+					<span>
+						<strong>QQ宝贝<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li class="mainBox-item4" title="天猫作品">
+				<a href="javascript:;">
+					<div>
+						<img src="img/zx.png" alt="">
+					</div>
+					<span>
+						<strong>天猫作品<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li class="mainBox-item5" title="UR官网首页">
+				<a href="javascript:;">
+					<div>
+						<img src="img/zx.png" alt="">
+					</div>
+					<span>
+						<strong>UR官网首页<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li class="mainBox-item6" title="WebQQ介绍">
+				<a href="javascript:;">
+					<div>
+						<img src="img/zx.png" alt="">
+					</div>
+					<span>
+						<strong>WebQQ介绍<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+		</ul>
+		<ul id="mainBox-page2"  >
+			<li title="芒果旅游">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_21.png" alt="">
+					</div>
+					<span>
+						<strong>芒果旅游<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="团购地图">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_22.png" alt="">
+					</div>
+					<span>
+						<strong>团购地图<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="快递查询">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_23.png" alt="">
+					</div>
+					<span>
+						<strong>快递查询<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="便签">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_24.png" alt="">
+					</div>
+					<span>
+						<strong>便签<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="网络硬盘">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_25.png" alt="">
+					</div>
+					<span>
+						<strong>网络硬盘<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+		</ul>
+		<ul id="mainBox-page3">
+			<li title="">
+				<a href="javascript:;">
+					<div>
+						<img src="img/big01.png" alt="">
+					</div>
+					<span>
+						<strong>金山快盘<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="网页浏览">
+				<a href="javascript:;">
+					<div>
+						<img src="img/big02.png" alt="">
+					</div>
+					<span>
+						<strong>网页浏览<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="阅读">
+				<a href="javascript:;">
+					<div>
+						<img src="img/big03.png" alt="">
+					</div>
+					<span>
+						<strong>阅读<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="搜狗地图">
+				<a href="javascript:;">
+					<div>
+						<img src="img/big04.png" alt="">
+					</div>
+					<span>
+						<strong>搜狗地图<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="手机端">
+				<a href="javascript:;">
+					<div>
+						<img src="img/big05.png" alt="">
+					</div>
+					<span>
+						<strong>手机端<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="豆瓣音乐">
+				<a href="javascript:;">
+					<div>
+						<img src="img/big06.png" alt="">
+					</div>
+					<span>
+						<strong>豆瓣音乐<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+		</ul>
+		<ul id="mainBox-page4">
+			<li title="起点中文">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_41.png" alt="">
+					</div>
+					<span>
+						<strong>起点中文<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="QQ阅读">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_42.png" alt="">
+					</div>
+					<span>
+						<strong>QQ阅读<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="音乐盒子">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_43.png" alt="">
+					</div>
+					<span>
+						<strong>音乐盒子<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="腾讯视频">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_44.png" alt="">
+					</div>
+					<span>
+						<strong>腾讯视频<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="乐视网">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_45.png" alt="">
+					</div>
+					<span>
+						<strong>乐视网<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+		</ul>
+		<ul id="mainBox-page5">
+			<li title="朋友网">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_51.png" alt="">
+					</div>
+					<span>
+						<strong>朋友网<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="QQ阅读">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_52.png" alt="">
+					</div>
+					<span>
+						<strong>QQ阅读<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="好友管理">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_53.png" alt="">
+					</div>
+					<span>
+						<strong>好友管理<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="开开">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_54.png" alt="">
+					</div>
+					<span>
+						<strong>开开<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+			<li title="开心交友">
+				<a href="javascript:;">
+					<div>
+						<img src="img/d_big_55.png" alt="">
+					</div>
+					<span>
+						<strong>开心交友<b></b><b></b></strong>
+					</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="sideMenu">
+		<div id="sideMenu-icon">
+			<ul>
+				<li>
+					<a href="javascript:;">
+						<img src="img/big0.png" alt="应用市场">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/big1.png" alt="我的网盘">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/big2.png" alt="QQ">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/big3.png" alt="QQ空间">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/big4.png" alt="QQ邮箱">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="img/big5.png" alt="腾讯微博">
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="sideMenu-item" id="sM_item">
+			<ul>
+				<li><a class="sideMenu-item0" href="javascript:;"></a></li>
+				<li><a class="sideMenu-item1" href="javascript:;"></a></li>
+				<li><a class="sideMenu-item2" href="javascript:;"></a></li>
+				<li><a class="sideMenu-item3" href="javascript:;"></a></li>
+				<li class="sideMenu-item-qPlus"><a class="sideMenu-item4" href="javascript:;"></a></li>
+			</ul>
+		</div>
+
+	</div>
+
+
+
+<div id="bgWin">
+	<div class="bgWin-top">
+		<a class="close" href="javascript:;"></a>
+	</div>
+	<div class="bgWin-con clearfix">
+		<ul>
+			<li>
+				<img src="img/bg1.jpg" alt="">
+				<p>茫茫野草</p>
+			</li>
+			<li>
+				<img src="img/bg2.jpg" alt="">
+				<p>蒲樱之梦</p>
+			</li>
+			<li>
+				<img src="img/bg3.jpg" alt="">
+				<p>梦翔天际</p>
+			</li>
+			<li>
+				<img src="img/bg4.jpg" alt="">
+				<p>仰望苍穹</p>
+			</li>
+			<li>
+				<img src="img/bg5.jpg" alt="">
+				<p>水梦年华</p>
+			</li>
+			<li>
+				<img src="img/bg6.jpg" alt="">
+				<p>空灵蓝调</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- iframe桌面图标链接 -->
+<div id="winIframe">
+	<div id="winIframe-top">
+		<p></p>
+		<div class="winIframe-top-btns">
+			<a class="close" href="javascript:;"></a>
+			<a class="max" href="javascript:;"></a>
+			<a class="min" href="javascript:;"></a>
+		</div>
+	</div>
+	<div id="winIframe-content">
+		<iframe src="" frameborder="0">
+			
+		</iframe>
+	</div>
+</div>
+
+</body>
+</html>
